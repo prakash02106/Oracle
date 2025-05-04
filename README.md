@@ -1,7 +1,7 @@
 # Oracle
-Tables :
-----------
-SQL Commands :
+                Tables :
+                ----------
+                SQL Commands :
 
 
               DDL     -> DATA DEFINITION LANGUAGE
@@ -120,14 +120,14 @@ SQL Commands :
                 A row represents a single record or an instance of an entity in the table.
                 It is a horizontal representation of data.
 
- Metadata:
+               Metadata:
              Metadata can be also called as "Data Definition".
              It is the data about the data.
              Example:
               Field Name, Table name, Data type, Field size
 
 
-SQL:
+            SQL:
            SQL => Structured Query Language.
            SQL is a query language.
            SQL is used to write the queries to communicate with ORACLE DB.
@@ -136,7 +136,7 @@ SQL:
            Example:
            SELECT ename, sal FROM emp;   => QUERY
 
- CREATE:
+            CREATE:
            CREATE command is used to create ORACLE DB Objects like tables, views, indexes, … etc
 
             Syntax to create the table:
@@ -256,7 +256,7 @@ SQL:
 
 
            
-Built-In Functions:
+                Built-In Functions:
                     String Functions
                     Conversion
                     Date
@@ -265,13 +265,13 @@ Built-In Functions:
                     Aggregate
                     special
 
-Clauses:
+                Clauses:
                     GROUP BY
                     HAVING
                     ORDER BY
                     FETCH
 
-Joins:
+                Joins:
                     🔸 Inner Join (Equi & Non-Equi)
 
                     🔸 Left, Right, Full Outer Joins
@@ -282,7 +282,7 @@ Joins:
 
                     🔸 Cross Join
 
-Sub Queries:
+                Sub Queries:
                       Non-Correlated 
                        Single Row SQ
                        Multi Row SQ
@@ -290,20 +290,20 @@ Sub Queries:
                        Scalar
                        Correlated
 
-Constraints:
+                Constraints:
                         Primary Key
                         Foreign Key
                         Check
 
-Set Operators:
+                Set Operators:
                         Union
                         Union All
                         Intersects
                         minus
 
 
-VIEWS:
-INDEXES:
-SEQUENCES:
-SYNONYMS:
-MATERIALIZED VIEWS:
+                VIEWS:
+                INDEXES:
+                SEQUENCES:
+                SYNONYMS:
+                MATERIALIZED VIEWS:
