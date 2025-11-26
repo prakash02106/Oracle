@@ -1,309 +1,419 @@
-# Oracle
-                Tables :
-                ----------
-                SQL Commands :
-
-
-              DDL     -> DATA DEFINITION LANGUAGE
-                          -CREATE , ALTER , DROP , FLASHBACK AND PURGE[ORACLE 10G] ,TTRUNCATE , RENAME
-              DRL/DQL -> DATA RETRIEVAL LANGUAGE / DATA QUERY LANGUAGE 
-                          -SELECT
-              DML     -> DATA MANIPULATION LANGUAGE
-                          -INSERT , UPDATE ,DELETE ,INSERT ALL AND MERGE[ORACLE 9I]
-              TCL     -> TRANSACTION CONTROL LANGUAGE
-                          -COMMIT , ROLLBACK ,SAVEPOINT
-              DCL/ACL -> DATA CONTROL LANGUAGE/ACCESSING CONTROL LANGUAGE
-                          -GRANT REVOKE
-
-
-              Data Store=>
-                          it is a location where we store the data.
-                          ex:FILE,DB
-              Database  =>
-                          it ia a kind of data store with location and store organization's business data permanent
-              DBMS      =>
-                          It is like a Software to maintain the database safe and secure
-              RDBMS     =>
-                          It is like a Software to maintain database in the form of tables.
-
-              Variable:  -it is temporary Storage.
-              OBJECTS :  -it is temporary Storage.
-              FILE    :  -it is permanent Storage.
-              DATABASE:  -it is permanent Storage.
-
-              FILE
-              1.It is suitable for 1 user
-              2.security is less
-              3.it stores small amount of data
-              
-              DATABASE
-              1.It is suitable for multiple users.
-              2.security is high.
-              3.It is suitable to store larger amounts of data
-
-              📘 Evolution of DBMS (Database Management Systems)
-              🕰️ Before 1960s
-              📖 Data Storage: Physical Books, Paper records
-
-              🕰️ 1960s
-              💾 File Management Systems (FMS) introduced
-
-                Data stored in flat files
-
-                Example: Sequential, Indexed, and Direct Access Files
-
-                🕰️ 1970s
-                🌲 Hierarchical DBMS (e.g., IBM IMS – Info Management System)
-
-                🔁 Network DBMS (e.g., CODASYL model)
-                  → Uses complex pointers to represent relationships
-
-                🧠 1976 – Game Changer
-                👨‍🏫 Dr. E. F. Codd (IBM Scientist) introduced the Relational Model
-                → Based on mathematical set theory & predicate logic
-                → Gave birth to RDBMS (Relational DBMS)
-                
-                🚀 Oracle History
-                Year	Milestone
-                1977	💡 Larry Ellison, Bob Miner & Ed Oates founded Software Development Laboratories (SDL)
-                1979	✅ First version of Oracle (v2) released (written in assembly language)
-                1982	🔄 Company renamed to Relational Software Inc.
-                1983	🔁 Final rename to Oracle Corporation and released Oracle v3 (in C language)
-
-
-
-                🧾 RDBMS (Relational DataBase Management System)
-                🏢 Company History
-                Software Development Laboratories (SDL) → Founded by Larry Ellison & team
-
-                Renamed to 👉 Relational Software Inc.
-
-                Released: ✅ First version of ORACLE software
-
-                Later renamed to 👉 Oracle Corporation
-
-                📚 What is RDBMS?
-                RDBMS stands for Relational Database Management System / Software
-
-                It is a software used to create, manage, and manipulate databases in the form of tables.
-
-                🔗 RDBMS Core Concept
-                Term        	Meaning
-                Relation    	Table
-                Tuple	        Row
-                Attribute    	Column
-
-                🧰 Popular RDBMS Softwares & Their Companies
-                RDBMS           Product	Developed By
-                ---------------------------------
-                Oracle           	Oracle Corporation
-                SQL Server	      Microsoft
-                DB2	              IBM
-                PostgreSQL	      Postgre Forum
-                MySQL	            Sun Microsystems (now Oracle)
-
-               📝 Use of RDBMS:
-                Store structured data in tables
-                Define relationships using Primary/Foreign keys
-                Enforce data integrity with constraints
-                Support for SQL for querying and reporting
-
-                Table (Relation / Entity):
-                A table in a database is made up of rows and columns.
-                It is also called a Relation or Entity.
-                
-                Column (Attribute / Property / Field):
-                A column represents a particular attribute or property of the entity.
-                It is a vertical representation of data.
-
-                Row (Entity Instance / Tuple / Record):
-                A row represents a single record or an instance of an entity in the table.
-                It is a horizontal representation of data.
-
-               Metadata:
-             Metadata can be also called as "Data Definition".
-             It is the data about the data.
-             Example:
-              Field Name, Table name, Data type, Field size
-
-
-            SQL:
-           SQL => Structured Query Language.
-           SQL is a query language.
-           SQL is used to write the queries to communicate with ORACLE DB.
-           QUERY => request / command / instruction
-           QUERY is a request that is sent to DB SERVER.
-           Example:
-           SELECT ename, sal FROM emp;   => QUERY
-
-            CREATE:
-           CREATE command is used to create ORACLE DB Objects like tables, views, indexes, … etc
+# Oracle SQL & PL/SQL Complete Training Guide
+
+## 📚 Table of Contents
+
+### SQL Fundamentals
+1. Introduction to Oracle & RDBMS
+2. SQL Commands Overview
+3. Data Types
+4. Tables & Records
+5. SQL Operators
+6. Clauses & Conditions
+7. Joins
+8. Sub Queries
+9. Built-in Functions
+10. Constraints
+11. Database Objects
+
+### PL/SQL Programming
+12. PL/SQL Basics
+13. Control Structures
+14. Cursors
+15. Exception Handling
+16. Collections
+17. Stored Procedures & Functions
+18. Packages16. [Collections](#collections)
+19. Triggers
+17. [Stored Procedures & Functions](#stored-procedures--functions)
+18. [Packages](#packages)
+19. [Triggers](#triggers)
+
+---
+
+## Introduction to Oracle & RDBMS
+
+### What is Oracle?
+- Oracle is a **Relational Database Management System (RDBMS)**
+- Industry-leading enterprise database solution
+- Supports large-scale data management and processing
+
+### RDBMS Concepts
+- **Database**: Collection of related tables
+- **Table**: Collection of records organized in rows and columns
+- **Record/Row**: Single entry in a table
+- **Field/Column**: Specific attribute in a table
+
+### Key Features
+- Data integrity and consistency
+- Multi-user support
+- Security and access control
+- Transaction management
+- Backup and recovery
+
+---
+
+## SQL Commands Overview
+
+### DDL - Data Definition Language
+**Purpose**: Define and modify database structure
+
+```sql
+CREATE   -- Create new database objects
+ALTER    -- Modify existing objects
+DROP     -- Delete objects
+TRUNCATE -- Remove all records from table
+RENAME   -- Rename objects
+```
+
+### DRL/DQL - Data Retrieval/Query Language
+**Purpose**: Retrieve data from database
+
+```sql
+SELECT   -- Query and retrieve data
+```
+
+### DML - Data Manipulation Language
+**Purpose**: Manipulate data in tables
+
+```sql
+INSERT   -- Add new records
+UPDATE   -- Modify existing records
+DELETE   -- Remove records
+```
+
+### TCL - Transaction Control Language
+**Purpose**: Manage database transactions
+
+```sql
+COMMIT      -- Save changes permanently
+ROLLBACK    -- Undo changes
+SAVEPOINT   -- Create transaction savepoint
+```
+
+### DCL - Data Control Language
+**Purpose**: Control access to database
+
+```sql
+GRANT    -- Give privileges
+REVOKE   -- Remove privileges
+```
+
+---
+
+## Data Types
 
-            Syntax to create the table:
-               CREATE TABLE <table_name>
-               (
-               <column_name> <data_type> [,
-               <column_name> <data_type> ,
-              . 
-              .]
-               );
-               [ ] Optional
-               <> Any
-
-                For WINDOWS OS,  latest version is: ORACLE 21C
-                For LINUX OS, lest version is: ORACLE 23AI
-                Till ORACLE 21C, we can create max of 1000 columns.
-                In ORACLE 23AI, we can create max of 4096 columns.
-
-                 Data Type tells,
-                 •how much memory has to be allocated
-                 •which type of data should be accepted
-
-
-                 🔹 1. Character Data Types (Used for text)
-                👉 These are used to store words, names, or any text.
-
-                  Data Type            	      Description	                                    Example
-                  CHAR(n)            	Fixed-size text (always uses n characters)	            'INDIA'
-                  VARCHAR2(n)        	Variable-size text (up to n characters)	                'HYDERABAD'
-                    LONG	            Very large text (older type, not recommended)	          'Details...'
-                    CLOB	            Character Large Object (for huge texts)                	'Big content'
-                  NCHAR(n)	          Fixed-size Unicode text (multi-language)	              'RAJU' (Unicode)
-                  NVARCHAR2(n)	       Variable-size Unicode text	                             'TELANGANA' (Unicode)
-                  NCLOB	               Large Unicode text	                                      'Unicode doc'
-
-                ✅ Use VARCHAR2 for normal text.
-                ✅ Use NCHAR or NVARCHAR2 for non-English languages (like Telugu, Hindi).
-
-                🔹 2. Numeric / Integer Data Types (Whole numbers)
-                👉 These store numbers without decimal points.
-
-                Data Type	                Description                	   Example
-                NUMBER(p)	                Number with total p digits    	12345
-                INTEGER	                  Whole number	                  100
-                INT	                      Same as INTEGER	                789
-
-                🔹 3. Floating Point / Decimal Data Types (Decimal numbers)
-                👉 These are for numbers with decimals.
-
-                Data Type	                Description	                                Example
-                NUMBER(p,s)	           Total p digits, with s after decimal	         15000.75
-                FLOAT	                 Approximate decimal number	                     67.89
-                BINARY_FLOAT	         Single-precision decimal number	               5.3
-                BINARY_DOUBLE          Double-precision decimal number	               12000.00
-
-                🔹 4. Date & Time Data Types
-                👉 Used to store dates and timestamps.
-
-                Data Type	                Description	                                Example
-                DATE	                Date with time (up to seconds)	                25-DEC-23 or 25-DEC-23 10:30
-                TIMESTAMP	            Date with fractional seconds	                  11-JUL-24 10:30:15.123456 AM
-                INTERVAL	            Time difference (between two dates/times)	       5 days 3 hours
-
-                🔹 5. Binary Data Types
-                👉 Used for non-text data like files, images, audio, or videos.
-
-                Data Type	                      Description	                             Example
-                BLOB	                           Binary Large Object	                Image, video
-                BFILE	                           File stored outside the database	    File reference
-                RAW(n)	                         Binary data of n bytes	              Encoded data
-
-                🧠 ASCII vs Unicode (Character storage types)
-                ASCII = Stores only English characters (1 byte per character).
-
-                Unicode = Supports English + other languages (e.g., Telugu, Hindi).
-
-
-                🔹 1. CHAR(n)
-                Used to store string values (text).
-
-                n = Maximum number of characters.
-
-                It stores fixed-length text.
-
-                If the value is less than n, remaining space is filled with blank spaces.
-
-                It is a fixed-length data type.
-
-                ✅ Maximum size: 2000 bytes (or 2000 characters).
-
-                ✅ Default size: 1 character if not mentioned.
-
-                🔸 Example:
-                |sql>CHAR(10)|
-                If you insert 'RAM', it will store 'RAM ' (7 spaces after RAM).
-
-                🔹 2. VARCHAR2(n)
-                Also used to store string values.
-
-                n = Maximum number of characters allowed.
-
-                It stores variable-length text.
-
-                Only stores exact characters given — no extra spaces added.
-
-                It is a variable-length data type.
-
-                ✅ Maximum size: 4000 bytes (or 4000 characters).
-
-                ❌ No default size — you must specify the length.
-
-                🔸 Example:
-                sql>VARCHAR2(10)
-                If you insert 'RAM', it stores exactly 'RAM' — no extra spaces.
-
-
-
-
-           
-                Built-In Functions:
-                    String Functions
-                    Conversion
-                    Date
-                    Analytic
-                    Number
-                    Aggregate
-                    special
-
-                Clauses:
-                    GROUP BY
-                    HAVING
-                    ORDER BY
-                    FETCH
-
-                Joins:
-                    🔸 Inner Join (Equi & Non-Equi)
-
-                    🔸 Left, Right, Full Outer Joins
-
-                    🔸 Outer Join
-
-                    🔸 Self Join
-
-                    🔸 Cross Join
-
-                Sub Queries:
-                      Non-Correlated 
-                       Single Row SQ
-                       Multi Row SQ
-                       Inline View
-                       Scalar
-                       Correlated
-
-                Constraints:
-                        Primary Key
-                        Foreign Key
-                        Check
-
-                Set Operators:
-                        Union
-                        Union All
-                        Intersects
-                        minus
-
-
-                VIEWS:
-                INDEXES:
-                SEQUENCES:
-                SYNONYMS:
-                MATERIALIZED VIEWS:
+### Character Data Types
+| Data Type | Description | Max Size |
+|-----------|-------------|----------|
+| CHAR(size) | Fixed-length character | 2000 bytes |
+| VARCHAR2(size) | Variable-length character | 4000 bytes |
+| LONG | Variable-length character | 2 GB |
+
+### Numeric Data Types
+| Data Type | Description |
+|-----------|-------------|
+| NUMBER(p,s) | Fixed and floating-point numbers |
+| INTEGER | Whole numbers |
+| FLOAT | Floating-point numbers |
+
+### Date & Time Data Types
+| Data Type | Description |
+|-----------|-------------|
+| DATE | Date and time |
+| TIMESTAMP | Date and time with fractional seconds |
+
+### Large Object Data Types
+| Data Type | Description | Max Size |
+|-----------|-------------|----------|
+| CLOB | Character Large Object | 4 GB |
+| BLOB | Binary Large Object | 4 GB |
+
+---
+
+## Tables & Records
+
+### Creating Tables
+
+```sql
+CREATE TABLE table_name (
+    column1 datatype constraints,
+    column2 datatype constraints,
+    ...
+);
+
+-- Example
+CREATE TABLE employees (
+    emp_id NUMBER(5) PRIMARY KEY,
+    emp_name VARCHAR2(50) NOT NULL,
+    salary NUMBER(10,2),
+    hire_date DATE DEFAULT SYSDATE
+);
+```
+
+### Inserting Records
+
+```sql
+-- Insert all columns
+INSERT INTO table_name VALUES (value1, value2, ...);
+
+-- Insert specific columns
+INSERT INTO table_name (column1, column2) VALUES (value1, value2);
+
+-- Insert multiple records
+INSERT ALL
+    INTO table_name VALUES (value1, value2)
+    INTO table_name VALUES (value3, value4)
+SELECT * FROM dual;
+```
+
+### Updating Records
+
+```sql
+UPDATE table_name
+SET column1 = value1, column2 = value2
+WHERE condition;
+```
+
+### Deleting Records
+
+```sql
+DELETE FROM table_name WHERE condition;
+```
+
+### Modifying Tables
+
+```sql
+-- Add column
+ALTER TABLE table_name ADD column_name datatype;
+
+-- Modify column
+ALTER TABLE table_name MODIFY column_name new_datatype;
+
+-- Drop column
+ALTER TABLE table_name DROP COLUMN column_name;
+
+-- Rename column
+ALTER TABLE table_name RENAME COLUMN old_name TO new_name;
+```
+
+---
+
+## SQL Operators
+
+### Arithmetic Operators
+```sql
++  (Addition)
+-  (Subtraction)
+*  (Multiplication)
+/  (Division)
+```
+
+### Comparison Operators
+```sql
+=   (Equal to)
+!=  (Not equal to)
+>   (Greater than)
+<   (Less than)
+>=  (Greater than or equal to)
+<=  (Less than or equal to)
+```
+
+### Logical Operators
+```sql
+AND  -- All conditions must be true
+OR   -- At least one condition must be true
+NOT  -- Negates a condition
+```
+
+### Special Operators
+```sql
+BETWEEN ... AND ...  -- Range check
+IN (list)            -- Match any value in list
+LIKE                 -- Pattern matching
+IS NULL              -- Check for NULL values
+```
+
+---
+
+## Clauses & Conditions
+
+### WHERE Clause
+```sql
+SELECT * FROM table_name WHERE condition;
+```
+
+### ORDER BY Clause
+```sql
+SELECT * FROM table_name ORDER BY column_name [ASC|DESC];
+```
+
+### GROUP BY Clause
+```sql
+SELECT column1, COUNT(*)
+FROM table_name
+GROUP BY column1;
+```
+
+### HAVING Clause
+```sql
+SELECT column1, COUNT(*)
+FROM table_name
+GROUP BY column1
+HAVING COUNT(*) > 5;
+```
+
+### DISTINCT Keyword
+```sql
+SELECT DISTINCT column_name FROM table_name;
+```
+
+---
+
+## Joins
+
+### Types of Joins
+
+#### 1. INNER JOIN (EQUI JOIN)
+```sql
+SELECT columns
+FROM table1
+INNER JOIN table2 ON table1.column = table2.column;
+```
+
+#### 2. LEFT OUTER JOIN
+```sql
+SELECT columns
+FROM table1
+LEFT JOIN table2 ON table1.column = table2.column;
+```
+
+#### 3. RIGHT OUTER JOIN
+```sql
+SELECT columns
+FROM table1
+RIGHT JOIN table2 ON table1.column = table2.column;
+```
+
+#### 4. FULL OUTER JOIN
+```sql
+SELECT columns
+FROM table1
+FULL JOIN table2 ON table1.column = table2.column;
+```
+
+#### 5. SELF JOIN
+```sql
+SELECT a.column, b.column
+FROM table1 a, table1 b
+WHERE a.column = b.column;
+```
+
+#### 6. CROSS JOIN
+```sql
+SELECT * FROM table1 CROSS JOIN table2;
+```
+
+---
+
+## Sub Queries
+
+### Single Row Sub Query
+```sql
+SELECT * FROM employees
+WHERE salary > (SELECT AVG(salary) FROM employees);
+```
+
+### Multi Row Sub Query
+```sql
+SELECT * FROM employees
+WHERE dept_id IN (SELECT dept_id FROM departments WHERE location = 'New York');
+```
+
+### Correlated Sub Query
+```sql
+SELECT e1.emp_name, e1.salary
+FROM employees e1
+WHERE salary > (SELECT AVG(salary) FROM employees e2 WHERE e1.dept_id = e2.dept_id);
+```
+
+---
+
+## Built-in Functions
+
+### String Functions
+
+| Function | Description | Example |
+|----------|-------------|--------|
+| UPPER(string) | Converts to uppercase | UPPER('hello') → 'HELLO' |
+| LOWER(string) | Converts to lowercase | LOWER('HELLO') → 'hello' |
+| INITCAP(string) | Capitalizes first letter | INITCAP('hello world') → 'Hello World' |
+| LENGTH(string) | Returns string length | LENGTH('Oracle') → 6 |
+| SUBSTR(string, start, length) | Extracts substring | SUBSTR('Oracle', 1, 3) → 'Ora' |
+| CONCAT(str1, str2) | Concatenates strings | CONCAT('Hello', 'World') → 'HelloWorld' |
+| TRIM(string) | Removes leading/trailing spaces | TRIM('  Hello  ') → 'Hello' |
+| LTRIM(string) | Removes leading spaces | LTRIM('  Hello') → 'Hello' |
+| RTRIM(string) | Removes trailing spaces | RTRIM('Hello  ') → 'Hello' |
+| REPLACE(string, old, new) | Replaces characters | REPLACE('Hello', 'e', 'a') → 'Hallo' |
+| INSTR(string, substring) | Finds position of substring | INSTR('Oracle', 'cle') → 4 |
+| LPAD(string, length, pad) | Left pads string | LPAD('5', 3, '0') → '005' |
+| RPAD(string, length, pad) | Right pads string | RPAD('5', 3, '0') → '500' |
+
+### Number Functions
+
+| Function | Description | Example |
+|----------|-------------|---------|
+| ROUND(number, decimals) | Rounds number | ROUND(15.678, 2) → 15.68 |
+| TRUNC(number, decimals) | Truncates number | TRUNC(15.678, 2) → 15.67 |
+| MOD(m, n) | Returns remainder | MOD(10, 3) → 1 |
+| CEIL(number) | Rounds up | CEIL(15.2) → 16 |
+| FLOOR(number) | Rounds down | FLOOR(15.8) → 15 |
+| ABS(number) | Absolute value | ABS(-15) → 15 |
+| POWER(m, n) | m raised to power n | POWER(2, 3) → 8 |
+| SQRT(number) | Square root | SQRT(16) → 4 |
+| SIGN(number) | Returns sign (-1, 0, 1) | SIGN(-15) → -1 |
+
+### Date Functions
+
+| Function | Description | Example |
+|----------|-------------|---------|
+| SYSDATE | Current date and time | SYSDATE |
+| ADD_MONTHS(date, n) | Adds n months to date | ADD_MONTHS(SYSDATE, 2) |
+| MONTHS_BETWEEN(date1, date2) | Months between dates | MONTHS_BETWEEN('01-JUN-23', '01-JAN-23') → 5 |
+| NEXT_DAY(date, day) | Next occurrence of day | NEXT_DAY(SYSDATE, 'MONDAY') |
+| LAST_DAY(date) | Last day of month | LAST_DAY(SYSDATE) |
+| ROUND(date, format) | Rounds date | ROUND(SYSDATE, 'MONTH') |
+| TRUNC(date, format) | Truncates date | TRUNC(SYSDATE, 'YEAR') |
+
+### Aggregate Functions
+
+| Function | Description |
+|----------|-------------|
+| COUNT(*) | Count all rows |
+| COUNT(column) | Count non-null values |
+| SUM(column) | Sum of values |
+| AVG(column) | Average of values |
+| MAX(column) | Maximum value |
+| MIN(column) | Minimum value |
+
+### Conversion Functions
+
+| Function | Description | Example |
+|----------|-------------|---------|
+| TO_CHAR(number, format) | Converts number to string | TO_CHAR(5000, 'L9999.99') → Rs5000.00 |
+| TO_CHAR(date, format) | Converts date to string | TO_CHAR(SYSDATE, 'DD-MON-YYYY') |
+| TO_DATE(string, format) | Converts string to date | TO_DATE('23-12-2020', 'DD-MM-YYYY') |
+| TO_NUMBER(string, format) | Converts string to number | TO_NUMBER('123') → 123 |
+
+---
+
+## Constraints
+
+### Types of Constraints
+
+Constraints are rules applied to columns to enforce data integrity.
+
+| Constraint | Description | Example |
+|------------|-------------|---------|
+
+| Constraint | Description | Example |
+|------------|-------------|---------|
